@@ -54,5 +54,6 @@ function print_device_info() {
     done
 }
 
+ip=$(hostname -I | awk '{print $1}')
 printf "quering GPU usage for $ip, please wait for a few seconds...\n"
 print_device_info | prettytable 7
