@@ -56,6 +56,3 @@ function print_device_info() {
 
 printf "quering GPU usage for $ip, please wait for a few seconds...\n"
 print_device_info | prettytable 7
-wait_time=20
-printf "query finished, sleeping for %d seconds\n" $wait_time
-sleep $wait_time

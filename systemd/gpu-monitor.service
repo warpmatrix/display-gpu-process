@@ -1,0 +1,10 @@
+[Unit]
+Description=GPU Processes Monitor
+
+[Service]
+ExecStart=ttyd display_gpu_process.sh
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=default.target
