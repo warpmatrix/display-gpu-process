@@ -35,7 +35,7 @@ function set_owner_and_owner_type() {
 }
 
 function print_device_info() {
-    local pids=$(nvidia-smi --query-compute-apps=pid,used_memory --format=csv,noheader,nounits | sort -n -k 2 -r | awk -F ', ' '{print $1}')
+    local pids=$(nvidia-smi --query-compute-apps=pid --format=csv,noheader | sort | uniq)
     printf "%s\t%s\t%s\t%s\t%s\t%s\t%s\n" "process" "used-memory (MiB)" "device-name" "device-bus" "owner" "owner-type" "running-time"
     # shellcheck disable=SC2048
     for pid in ${pids[*]}; do
